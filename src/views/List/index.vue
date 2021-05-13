@@ -54,7 +54,7 @@ export default {
     gotoGoodsList (item3) {
       console.log(item3)
       this.$router.push({
-        path: '/details',
+        path: '/detailslist',
         query: {
           cid: item3.cat_id
         }

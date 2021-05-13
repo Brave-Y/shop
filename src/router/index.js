@@ -16,6 +16,8 @@ import Login from '../views/Login'
 import Error from '../views/Error'
 // 商品详情页面
 import Details from '../views/Details'
+// 商品详情列表
+import DetailsList from '../views/DetailsList'
 
 // 注册路由
 Vue.use(VueRouter)
@@ -56,6 +58,11 @@ const routes = [
     path: '/details',
     name: 'Details',
     component: Details
+  },
+  {
+    path: '/detailslist',
+    name: 'DetailsList',
+    component: DetailsList
   },
   {
     path: '/login',
