@@ -14,6 +14,8 @@ import My from '../views/My'
 import Login from '../views/Login'
 // 引入404页面
 import Error from '../views/Error'
+// 商品详情页面
+import Details from '../views/Details'
 
 // 注册路由
 Vue.use(VueRouter)
@@ -49,6 +51,11 @@ const routes = [
         component: My
       }
     ]
+  },
+  {
+    path: '/details',
+    name: 'Details',
+    component: Details
   },
   {
     path: '/login',
