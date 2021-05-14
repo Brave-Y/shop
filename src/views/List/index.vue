@@ -67,7 +67,6 @@ export default {
 <style lang="scss" scoped>
 .side {
   display: flex;
-  // justify-content: space-between;
   // 左侧样式
   .side-left {
     width: 120px;

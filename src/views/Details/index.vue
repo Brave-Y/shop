@@ -1,5 +1,5 @@
 <template>
-  <div>我是商品详情页--{{$route.query.cid}}</div>
+  <div>我是商品详情页--{{$route.query.goods_id}}</div>
 </template>
 
 <script>
