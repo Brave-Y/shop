@@ -12,7 +12,7 @@
 
 <script>
 // 商品列表的数据
-import { DetailsList } from '../../utils/Sql/details'
+import { DetailsList } from '../../utils/Sql/detailslist'
 export default {
   data () {
     return {
