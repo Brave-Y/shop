@@ -31,8 +31,6 @@
 </div>
 
 <!-- 商品介绍 -->
-<div class="lazyimg">
-   </div>
 <!-- 商品功能 -->
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" dot />
