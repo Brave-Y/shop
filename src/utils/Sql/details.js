@@ -31,6 +31,26 @@ const Details = {
           pics_big_url: 'https://emm.erm.icu/myvant/666.jpg',
           pics_mid_url: 'https://emm.erm.icu/myvant/666.jpg',
           pics_sma_url: 'https://emm.erm.icu/myvant/666.jpg'
+        },
+        {
+          pics_id: 234751,
+          goods_id: 57332,
+          pics_big: ['https://emm.erm.icu/myvant/666.jpg'],
+          pics_mid: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_sma: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_big_url: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_mid_url: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_sma_url: 'https://emm.erm.icu/myvant/666.jpg'
+        },
+        {
+          pics_id: 234751,
+          goods_id: 57332,
+          pics_big: ['https://emm.erm.icu/myvant/666.jpg'],
+          pics_mid: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_sma: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_big_url: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_mid_url: 'https://emm.erm.icu/myvant/666.jpg',
+          pics_sma_url: 'https://emm.erm.icu/myvant/666.jpg'
         }
       ],
       attrs: [

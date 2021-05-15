@@ -3,7 +3,7 @@
     <!-- 轮播图区域 -->
     <div class="swipe">
     <van-swipe class="my-swipe" :autoplay="2400" loop touchable  indicator-color="white">
-      <van-swipe-item v-for="(item, i) in goods_info[0].pics" :key="i">
+      <van-swipe-item v-for="(item, i) in details_info[0].pics" :key="i">
         <a>
           <!-- 超链接项目完成再添加 -->
            <!-- :href=item.navigator_url -->
@@ -13,6 +13,22 @@
     </van-swipe>
     </div>
     <!-- 商品信息区 -->
+<div class="details-info-box">
+  <!-- 商品价格 -->
+  <div class="price">￥{{details_info[0].goods_price}}</div>
+  <!-- 信息主体区域 -->
+  <div class="details-info-body">
+    <!-- 商品名称 -->
+    <div class="details-name">{{details_info[0].goods_name}}</div>
+    <!-- 收藏 -->
+    <div class="shou">
+      <van-icon name="star-o" />
+      <span>收藏</span>
+    </div>
+  </div>
+  <!-- 运费 -->
+  <div class="yun">快递：免运费</div>
+</div>
 
     </div>
 </template>
@@ -23,12 +39,12 @@ export default {
   data () {
     return {
       // 商品详情对象
-      goods_info: {}
+      details_info: {}
     }
   },
   created () {
     this.getDetails(this.$route.query.goods_id)
-    console.log(this.goods_info[0])
+    console.log(this.details_info[0])
   },
   methods: {
     // 获取商品详情
@@ -37,7 +53,7 @@ export default {
       const data = res.filter((item) => {
         if (parseInt(id) === parseInt(item.goods_id)) return item
       })
-      this.goods_info = data
+      this.details_info = data
     }
   }
 }
@@ -56,5 +72,43 @@ export default {
     display: inline-block;
     width: 100%;
     height: 350px;
+}
+// 商品信息区域的样式
+.details-info-box {
+  padding: 10px;
+  padding-right: 0;
+  .price {
+    color: #c00000;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  .details-info-body {
+    display: flex;
+    justify-content: space-between;
+    .details-name {
+      font-size: 13px;
+      padding-right: 10px;
+    }
+    // 收藏区域
+    .shou {
+      width: 120px;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-left: 1px solid #efefef;
+      color: gray;
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+  // 运费
+  .yun {
+    margin: 10px 0;
+    font-size: 12px;
+    color: gray;
+  }
 }
 </style>
