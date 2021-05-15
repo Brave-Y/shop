@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="details_info[0].goods_name">
     <!-- 轮播图区域 -->
     <div class="swipe">
     <van-swipe class="my-swipe" :autoplay="2400" loop touchable  indicator-color="white">
@@ -29,6 +29,14 @@
   <!-- 运费 -->
   <div class="yun">快递：免运费</div>
 </div>
+<!-- 商品功能 -->
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" dot />
+  <van-goods-action-icon @click="gotoCart" icon="cart-o" text="购物车" badge="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
+  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
 
     </div>
 </template>
@@ -54,6 +62,12 @@ export default {
         if (parseInt(id) === parseInt(item.goods_id)) return item
       })
       this.details_info = data
+    },
+    // 跳转购物车
+    gotoCart () {
+      this.$router.push({
+        path: '/cart'
+      })
     }
   }
 }
