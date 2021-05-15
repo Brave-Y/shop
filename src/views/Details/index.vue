@@ -29,12 +29,16 @@
   <!-- 运费 -->
   <div class="yun">快递：免运费</div>
 </div>
+
+<!-- 商品介绍 -->
+<div class="lazyimg">
+   </div>
 <!-- 商品功能 -->
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" dot />
-  <van-goods-action-icon @click="gotoCart" icon="cart-o" text="购物车" badge="5" />
+  <van-goods-action-icon @click="gotoCart" :badge=badge icon="cart-o" text="购物车" />
   <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
-  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button @click="add_Cart" type="warning" text="加入购物车" />
   <van-goods-action-button type="danger" text="立即购买" />
 </van-goods-action>
 
@@ -43,11 +47,25 @@
 
 <script>
 import { Details } from '../../utils/Sql/details'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 export default {
   data () {
     return {
       // 商品详情对象
-      details_info: {}
+      details_info: {},
+      badge: this.total
+    }
+  },
+  computed: {
+    ...mapState('Cart', ['cart']),
+    ...mapGetters('Cart', ['total'])
+  },
+  watch: {
+    total: {
+      handler (newVal) {
+        this.badge = newVal
+      },
+      immediate: true
     }
   },
   created () {
@@ -55,6 +73,7 @@ export default {
     console.log(this.details_info[0])
   },
   methods: {
+    ...mapMutations('Cart', ['addCart']),
     // 获取商品详情
     getDetails (id) {
       const res = Details.data
@@ -68,6 +87,19 @@ export default {
       this.$router.push({
         path: '/cart'
       })
+    },
+    // 加如购物车
+    add_Cart () {
+      // 2. 组织一个商品的信息对象
+      const data = {
+        goods_id: this.details_info[0].goods_id, // 商品的Id
+        goods_name: this.details_info[0].goods_name, // 商品的名称
+        goods_price: this.details_info[0].goods_price, // 商品的价格
+        goods_count: 1, // 商品的数量
+        goods_small_logo: this.details_info[0].goods_small_logo, // 商品的图片
+        goods_state: true // 商品的勾选状态
+      }
+      this.addCart(data)
     }
   }
 }

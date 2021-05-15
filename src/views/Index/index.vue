@@ -70,7 +70,6 @@ export default {
     this.navigator = Navigator.data
     // 获取楼层数据
     this.getFloors()
-    console.log(this.floors)
   },
   methods: {
     getFloors () {

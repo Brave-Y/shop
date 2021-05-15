@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Index',
   data () {
@@ -18,7 +19,18 @@ export default {
       // 当前选中项
       active: 0,
       // 购物车数量
-      badge: 6
+      badge: this.total
+    }
+  },
+  computed: {
+    ...mapGetters('Cart', ['total'])
+  },
+  watch: {
+    total: {
+      handler (newVal) {
+        this.badge = newVal
+      },
+      immediate: true
     }
   },
   methods: {
