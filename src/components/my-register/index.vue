@@ -17,7 +17,7 @@
     name="密码"
     label="密    码"
     placeholder="请输入六位数密码"
-    :rules="[{ validator, required: true, message: '请输入密码' }]"
+    :rules="[{ required: true, message: '请输入密码' }]"
   />
   <van-field
   class="buton"
@@ -29,13 +29,14 @@
     :rules="[{ required: true, message: '请再次输入密码' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">注册</van-button>
+    <van-button round block type="info" native-type="submit">注册{{name}}</van-button>
   </div>
 </van-form>
 </div>
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
 export default {
   data () {
     return {
@@ -46,12 +47,22 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState('User', ['name'])
+  },
   methods: {
-    validator (val) {
-      return /1\d{6}/.test(val)
-    },
-    onSubmit (values) {
-      console.log('submit', values)
+    ...mapMutations('User', ['Register']),
+    onSubmit (data) {
+      console.log('submit', data)
+      const res = JSON.parse(localStorage.getItem('userinfo'))
+      console.log(res)
+      Object.keys(res).forEach(function (key) {
+        console.log(key, res[key])
+      })
+      Object.keys(data).forEach(function (key) {
+        console.log(key, data[key])
+      })
+      this.Register(data)
     }
   }
 }

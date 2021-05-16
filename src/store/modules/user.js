@@ -6,14 +6,19 @@ export default {
   state: () => ({
     // 收货地址
     address: {},
-    userInfo: {}
+    userInfo: {},
+    name: 1
   }),
 
   // 方法
   mutations: {
     // 注册功能
-    register (state, data) {
+    Register (state, data) {
       state.userInfo = data
+      this.commit('User/saveUserinfo')
+    },
+    saveUserinfo (state) {
+      localStorage.setItem('userinfo', JSON.stringify(state.userInfo))
     },
     // 更新收货地址
     updateAddress (state, address) {
