@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view />
-    <van-tabbar v-model="active" fixed z-index route @change="onChange">
+    <van-tabbar class="footer" v-model="active" fixed z-index=3 route @change="onChange" placeholder>
       <van-tabbar-item icon="home-o" to="/index">首页</van-tabbar-item>
       <van-tabbar-item icon="apps-o" dot to="/list">分类</van-tabbar-item>
       <van-tabbar-item icon="cart-o" :badge=badge to="/cart">购物车</van-tabbar-item>
@@ -42,5 +42,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.footer{
+  position: fixed;
+  bottom: 0;
+}
 </style>

@@ -10,7 +10,7 @@ const Details = {
       goods_introduce: '<div class="lazyimg"><!-- Save for Web Slices (20170730关联模板.psd) -->\n<p><img data-src="//image.suning.cn/uimg/sop/commodity/167890268714163515505319_x.jpg?from=mobile&amp;format=80q.webp" alt="" usemap="#Map" border="0" src="//image.suning.cn/uimg/sop/commodity/167890268714163515505319_x.jpg?from=mobile&format=80q.webp" width="100%" height="auto"> </p>\n<!-- End Save for Web Slices --><p></p><p><img picsize="706KB" data-src="//image.suning.cn/uimg/sop/phonecomm/157271695856956094412300_640x.jpg?from=mobile&amp;format=80q.webp" alt="" src="//image.suning.cn/uimg/sop/phonecomm/157271695856956094412300_640x.jpg?from=mobile&format=80q.webp" width="100%" height="auto"></p><p><img picsize="610KB" data-src="//image.suning.cn/uimg/sop/phonecomm/192892939814201549766135_640x.jpg?from=mobile&amp;format=80q.webp" alt="" src="//image.suning.cn/uimg/sop/phonecomm/192892939814201549766135_640x.jpg?from=mobile&format=80q.webp" width="100%" height="auto"></p></div>',
       goods_big_logo: 'https://emm.erm.icu/myvant/666.jpg',
       goods_small_logo: 'https://emm.erm.icu/myvant/666.jpg',
-      goods_state: 2,
+      goods_state: 1,
       is_del: '0',
       add_time: 1516662792,
       upd_time: 1516662792,

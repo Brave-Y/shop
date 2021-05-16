@@ -1,5 +1,6 @@
 <template>
   <div v-if="details_info[0].goods_name">
+          <nave-bar :showIcon="true" :title=title />
     <!-- 轮播图区域 -->
     <div class="swipe">
     <van-swipe class="my-swipe" :autoplay="2400" loop touchable  indicator-color="white">
@@ -51,7 +52,8 @@ export default {
     return {
       // 商品详情对象
       details_info: {},
-      badge: this.total
+      badge: this.total,
+      title: '商品详情'
     }
   },
   computed: {
