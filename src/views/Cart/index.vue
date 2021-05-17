@@ -22,7 +22,7 @@
 <div class="footer">
   <van-checkbox  checked-color="#C00000" v-model="isFullCheck" @click="allchecked">全选</van-checkbox>
   <span>合计: <span>￥{{checkedTotal}}</span></span>
-  <van-button class="button" type="danger">结算({{checkedCount}})</van-button>
+  <van-button class="button" type="danger" @click="jie">结算({{checkedCount}})</van-button>
 </div>
 </div>
 
@@ -41,25 +41,26 @@ import { Toast } from 'vant'
 export default {
   data () {
     return {
-      detailslist: this.cart,
-      c: false
+      detailslist: this.cart
     }
   },
   computed: {
     ...mapState('Cart', ['cart']),
+    ...mapState('User', ['userInfo']),
     ...mapGetters('Cart', ['total', 'checkedCount', 'checkedTotal']),
     // 是否全选
     isFullCheck: {
       get () {
         return this.total === this.checkedCount
       },
-      set (e) {
+      set () {
         return this.total === this.checkedCount
       }
     }
   },
   created () {
     this.getCart()
+    console.log(this.detailslist)
   },
   methods: {
     ...mapMutations('Cart', ['updataSave', 'updateAllsave', 'updateCount', 'removeCart']),
@@ -90,8 +91,12 @@ export default {
       console.log('地址')
     },
     // 提交订单
-    onSubmit (e) {
-      console.log(e)
+    jie () {
+      if (this.userInfo.data.username) {
+        Toast.loading('正在结算！')
+      } else {
+        Toast.fail('请先登录！')
+      }
     }
   }
 }
@@ -136,6 +141,7 @@ export default {
     background-color: rgb(192,0,0);
   }
 }
+// 空白购物车
   .empty-cart {
     display: flex;
     flex-direction: column;
@@ -145,12 +151,6 @@ export default {
     .empty-img {
       width: 90px;
       height: 90px;
-    }
-
-    .tip-text {
-      font-size: 12px;
-      color: gray;
-      margin-top: 15px;
     }
   }
 </style>

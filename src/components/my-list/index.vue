@@ -10,23 +10,23 @@
         <div class="details-item-left">
         <!-- 左侧单选框 -->
       <van-checkbox v-model="checked" v-if="showRadio" checked-color="#C00000" @click="change"></van-checkbox>
-          <!-- :src="goods.goods_small_logo || defaultPic" -->
-          <img :src="detailslist.goods_small_logo || defaultPic" class="details-pic" />
+          <!-- :src="details.details_small_logo || defaultPic" -->
+          <img :src="detailslist.details_small_logo || defaultPic" class="details-pic" />
         </div>
         <!-- 商品右侧信息区域 -->
         <div class="details-item-right">
           <!-- 商品标题 -->
-          <span class="details-name">{{ detailslist.goods_name }}</span>
+          <span class="details-name">{{ detailslist.details_name }}</span>
           <div class="details-info-box">
             <!-- 商品价格 -->
-            <span class="details-price">￥{{ detailslist.goods_price | tofixed }}</span>
+            <span class="details-price">￥{{ detailslist.details_price | tofixed }}</span>
             <!-- 商品数量 -->
             <van-stepper min=1 max="99" integer v-model="value" v-if="showRadio" @change="change2" />
           </div>
         </div>
       </div>
   <template #right>
-    <van-button square text="删除" type="danger" class="delete-button" @click="change3(detailslist.goods_id)" />
+    <van-button square text="删除" type="danger" class="delete-button" @click="change3(detailslist.details_id)" />
   </template>
 </van-swipe-cell>
 
@@ -45,21 +45,24 @@ export default {
       defaul: false
     }
   },
+  created () {
+    console.log(this.detailslist)
+  },
   data () {
     return {
       // 默认图片
       defaultPic: 'https://emm.erm.icu/myvant/666.jpg',
-      // checked: this.detailslist.goods_state,
-      value: this.detailslist.goods_count
+      // checked: this.detailslist.details_state,
+      value: this.detailslist.details_count
     }
   },
   computed: {
     checked: {
       get () {
-        return this.detailslist.goods_state
+        return this.detailslist.details_state
       },
       set () {
-        return this.detailslist.goods_state
+        return this.detailslist.details_state
       }
     }
   },
@@ -69,24 +72,21 @@ export default {
       return Number(num).toFixed(2)
     }
   },
-  created () {
-  },
-
   methods: {
     change () {
       this.$emit('chan', {
         // 商品的 Id
-        goods_id: this.detailslist.goods_id,
+        details_id: this.detailslist.details_id,
         // 商品最新的勾选状态
-        goods_state: !this.detailslist.goods_state
+        details_state: !this.detailslist.details_state
       })
     },
     change2 (val) {
       this.$emit('chan2', {
         // 商品的 Id
-        goods_id: this.detailslist.goods_id,
+        details_id: this.detailslist.details_id,
         // 商品的最新数量
-        goods_count: +val
+        details_count: +val
       })
     },
     // 删除

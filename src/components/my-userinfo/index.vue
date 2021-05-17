@@ -2,10 +2,8 @@
 <div class="my-userinfo-container">
     <!-- 头像昵称区域 -->
     <div class="top-box">
-      <!-- :src="userinfo.avatarUrl" -->
   <img src="@/assets/login.jpg">
       <div class="nickname">{{userInfo.data.username ? userInfo.data.username : "输个名字真难"}}</div>
-      <!-- {{userinfo.nickName ? userinfo.nickName : "输个名字真难"}} -->
     </div>
 
     <!-- 面板的列表区域 -->

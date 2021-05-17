@@ -10,11 +10,11 @@ export default {
     addCart (state, data) {
       // 点击加入购物车会传入商品详情，根据商品id判断cart中有无此商品
       // 如果res为空则表示购物车中没有该商品
-      const res = state.cart.find((x) => x.goods_id === data.goods_id)
+      const res = state.cart.find((x) => x.details_id === data.details_id)
       if (!res) {
         state.cart.push(data)
       } else {
-        res.goods_count++
+        res.details_count++
       }
       this.commit('Cart/saveCart')
     },
@@ -25,12 +25,12 @@ export default {
 
     // 勾选状态
     updataSave (state, data) {
-      // 根据 goods_id 查询购物车中对应商品的信息对象
-      const res = state.cart.find(x => x.goods_id === data.goods_id)
+      // 根据 details_id 查询购物车中对应商品的信息对象
+      const res = state.cart.find(x => x.details_id === data.details_id)
       // 有对应的商品信息对象
       if (res) {
       // 更新对应商品的勾选状态
-        res.goods_state = data.goods_state
+        res.details_state = data.details_state
         // 持久化存储到本地
         this.commit('Cart/saveCart')
       }
@@ -38,17 +38,17 @@ export default {
     // 更新所有商品的勾选状态
     updateAllsave (state, data) {
       // 循环更新购物车中每件商品的勾选状态
-      state.cart.forEach(x => { x.goods_state = data })
+      state.cart.forEach(x => { x.details_state = data })
       // 持久化存储到本地
       this.commit('Cart/saveCart')
     },
     // 购物车商品数量
     updateCount (state, data) {
-      // 根据 goods_id 查询购物车中对应商品的信息对象
-      const res = state.cart.find(x => x.goods_id === data.goods_id)
+      // 根据 details_id 查询购物车中对应商品的信息对象
+      const res = state.cart.find(x => x.details_id === data.details_id)
       if (res) {
         // 更新对应商品的数量
-        res.goods_count = data.goods_count
+        res.details_count = data.details_count
         // 持久化存储到本地
         this.commit('Cart/saveCart')
       }
@@ -56,7 +56,7 @@ export default {
     // 删除商品
     removeCart (state, id) {
     // 调用filter方法过滤
-      state.cart = state.cart.filter(x => x.goods_id !== id)
+      state.cart = state.cart.filter(x => x.details_id !== id)
       // 持久化存储到本地
       this.commit('Cart/saveCart')
     }
@@ -65,15 +65,15 @@ export default {
     // 更新商品的数量
     total (state) {
       let num = 0
-      state.cart.forEach(item => { num += item.goods_count })
+      state.cart.forEach(item => { num += item.details_count })
       return num
     },
     // 勾选商品的总数量
     checkedCount (state) {
       let total = 0
       state.cart.filter(item => {
-        if (item.goods_state) {
-          total += item.goods_count
+        if (item.details_state) {
+          total += item.details_count
         }
       })
       return total
@@ -82,8 +82,8 @@ export default {
     checkedTotal (state) {
       let total = 0
       state.cart.filter(item => {
-        if (item.goods_state) {
-          total += item.goods_count * item.goods_price
+        if (item.details_state) {
+          total += item.details_count * item.details_price
         }
       })
       return total.toFixed(2)

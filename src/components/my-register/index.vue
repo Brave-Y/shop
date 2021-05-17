@@ -19,26 +19,34 @@
   <van-field
   class="buton"
     v-model="register.password"
-    type="password"
+    :type=type
     name="password"
     label="密    码"
     placeholder="请输入六位数密码"
-    :rules="[{ required: true, message: '请输入密码' }]"
+    :rules="[{ pattern, required: true, message: '请输入六位数字' }]"
   />
   <van-field
   class="buton"
     v-model="register.passwordagin"
-    type="password"
+    :type=type
     name="password"
     label="确认密码"
     placeholder="再次输入密码"
-    :rules="[{ required: true, message: '请再次输入密码' }]"
+    :rules="[{ validator, required: true, message: '两次输入密码不同' }]"
   />
   <div style="margin: 16px;">
     <van-button round block type="info" native-type="submit">注册</van-button>
   </div>
 </van-form>
-<van-divider content-position="left">提示</van-divider>
+<van-divider content-position="left">提示<van-icon @click="change(1)" name="eye-o" /></van-divider>
+<div class="tishi">
+  <h5>注意：</h5>
+  <p>账号格式为6位数任意字符</p>
+  <p>密码格式为6位数字</p>
+  <p>本平台提供一键登录，因此只需注册完账号返回登录页登录即可</p>
+  <p>本平台一切数据均是储存在本地，如果反复注册则会覆盖当前账号密码，如忘记账号密码，重新注册新账号登录即可</p>
+  <p>~~~</p>
+</div>
 </div>
 </template>
 
@@ -49,6 +57,9 @@ export default {
   data () {
     return {
       title: '注册页',
+      pattern: /^\d{6}$/,
+      type: 'password',
+      istype: true,
       register: {
         username: '',
         password: '',
@@ -63,6 +74,10 @@ export default {
   },
   methods: {
     ...mapMutations('User', ['Register']),
+    // 校验函数返回 true 表示校验通过，false 表示不通过
+    validator (val) {
+      return this.register.password === this.register.passwordagin
+    },
     onSubmit (data) {
       if (this.userInfo.data.username) {
         this.Register({ data, token: {} })
@@ -78,6 +93,15 @@ export default {
         username: '',
         password: '',
         passwordagin: ''
+      }
+    },
+    change () {
+      if (this.istype) {
+        this.type = 'text'
+        this.istype = false
+      } else {
+        this.type = 'password'
+        this.istype = true
       }
     },
     onClickRight () {
@@ -109,5 +133,12 @@ export default {
     height: 36px;
     width: 100%;
     margin-top: 36px;
+  }
+  .tishi{
+    padding: 0 24px;
+    p{
+      font-size: 16px;
+      color: gray;
+    }
   }
 </style>

@@ -1,3 +1,11 @@
+/**
+ * image_src--商品图
+ * navigator_url--路由
+ * floor_title--楼层标题图
+ * product_list--楼层标题数据
+ * image_width--图片宽度
+ */
+
 // 轮播图数据
 const Swipers = {
   data: [
@@ -62,28 +70,24 @@ const Floors = {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         },
         {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         }
       ]
@@ -99,28 +103,24 @@ const Floors = {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         },
         {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         }
       ]
@@ -136,28 +136,24 @@ const Floors = {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         },
         {
           name: '优质服饰',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '232',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=服饰'
         },
         {
           name: '春季热门',
           image_src: 'https://emm.erm.icu/myvant/666.jpg',
           image_width: '233',
-          open_type: 'navigate',
           navigator_url: 'https://www.baidu.com/?query=热'
         }
       ]

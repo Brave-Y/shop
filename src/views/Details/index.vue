@@ -1,5 +1,5 @@
 <template>
-  <div v-if="details_info[0].goods_name">
+  <div v-if="details_info[0].details_name">
           <nave-bar :showIcon="true" :title=title />
     <!-- 轮播图区域 -->
     <div class="swipe">
@@ -16,11 +16,11 @@
     <!-- 商品信息区 -->
 <div class="details-info-box">
   <!-- 商品价格 -->
-  <div class="price">￥{{details_info[0].goods_price}}</div>
+  <div class="price">￥{{details_info[0].details_price}}</div>
   <!-- 信息主体区域 -->
   <div class="details-info-body">
     <!-- 商品名称 -->
-    <div class="details-name">{{details_info[0].goods_name}}</div>
+    <div class="details-name">{{details_info[0].details_name}}</div>
     <!-- 收藏 -->
     <div class="shou">
       <van-icon name="star-o" />
@@ -69,7 +69,7 @@ export default {
     }
   },
   created () {
-    this.getDetails(this.$route.query.goods_id)
+    this.getDetails(this.$route.query.details_id)
     console.log(this.details_info[0])
   },
   methods: {
@@ -78,7 +78,7 @@ export default {
     getDetails (id) {
       const res = Details.data
       const data = res.filter((item) => {
-        if (parseInt(id) === parseInt(item.goods_id)) return item
+        if (parseInt(id) === parseInt(item.details_id)) return item
       })
       this.details_info = data
     },
@@ -92,12 +92,12 @@ export default {
     add_Cart () {
       // 2. 组织一个商品的信息对象
       const data = {
-        goods_id: this.details_info[0].goods_id, // 商品的Id
-        goods_name: this.details_info[0].goods_name, // 商品的名称
-        goods_price: this.details_info[0].goods_price, // 商品的价格
-        goods_count: 1, // 商品的数量
-        goods_small_logo: this.details_info[0].goods_small_logo, // 商品的图片
-        goods_state: true // 商品的勾选状态
+        details_id: this.details_info[0].details_id, // 商品的Id
+        details_name: this.details_info[0].details_name, // 商品的名称
+        details_price: this.details_info[0].details_price, // 商品的价格
+        details_count: 1, // 商品的数量
+        details_small_logo: this.details_info[0].details_small_logo, // 商品的图片
+        details_state: true // 商品的勾选状态
       }
       this.addCart(data)
     }

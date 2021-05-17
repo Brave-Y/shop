@@ -4,18 +4,18 @@
     <div class="side">
     <!-- 左边的选项栏 -->
     <van-sidebar class="side-left" v-model="activeKey" @change="onChange">
-      <van-sidebar-item  v-for="(item, index) in list" :key="index" :class="['side-left-item', index === activeKey ? 'active' : '']" :title=item.cat_name />
+      <van-sidebar-item  v-for="(item, index) in list" :key="index" :class="['side-left-item', index === activeKey ? 'active' : '']" :title=item.list_name />
     </van-sidebar>
     <!-- 右边的内容栏 -->
     <div class="side-right" :model="activeKey" :style="{height: height + 'px'}">
       <div class="side-right-item" v-for="(item2, index2) in list2" :key="index2">
-        <div class="side-right-title">/{{item2.cat_name}}/</div>
+        <div class="side-right-title">/{{item2.list_name}}/</div>
         <!-- 三级 -->
         <div class="side-right-item3">
           <!-- 三级item -->
-          <div class="side-right-item3-item" v-for="(item3, index3) in item2.children" :key="index3" @click="gotoGoodsList(item3)">
-            <img :src=item3.cat_icon>
-            <span>{{item3.cat_name}}</span>
+          <div class="side-right-item3-item" v-for="(item3, index3) in item2.children" :key="index3" @click="gotoDetailsList(item3)">
+            <img :src=item3.list_icon>
+            <span>{{item3.list_name}}</span>
           </div>
         </div>
       </div>
@@ -46,17 +46,17 @@ export default {
     this.list2 = List.data[0].children
   },
   methods: {
+    // 左边分类栏
     onChange (index) {
       this.activeKey = index
       // 为二级分类列表重新赋值
       this.list2 = this.list[index].children
     },
-    gotoGoodsList (item3) {
-      console.log(item3)
+    gotoDetailsList (item3) {
       this.$router.push({
         path: '/detailslist',
         query: {
-          cid: item3.cat_id
+          cid: item3.list_id
         }
       })
     }

@@ -1,28 +1,24 @@
+/**
+ * list_id--导航栏商品序列
+ * list_icon--小图标
+ */
+
 const List = {
   data: [
     {
-      cat_id: 1,
-      cat_name: '大家电',
-      cat_pid: 0,
-      cat_level: 0,
-      cat_deleted: false,
-      cat_icon: '',
+      list_id: 1,
+      list_name: '大家电',
+      list_icon: '',
       children: [
         {
-          cat_id: 3,
-          cat_name: '电视',
-          cat_pid: 1,
-          cat_level: 1,
-          cat_deleted: false,
-          cat_icon: '',
+          list_id: 3,
+          list_name: '电视',
+          list_icon: '',
           children: [
             {
-              cat_id: 5,
-              cat_name: '曲面电视',
-              cat_pid: 3,
-              cat_level: 2,
-              cat_deleted: false,
-              cat_icon: 'https://emm.erm.icu/myvant/666.jpg'
+              list_id: 5,
+              list_name: '曲面电视',
+              list_icon: 'https://emm.erm.icu/myvant/666.jpg'
             }
           ]
         }

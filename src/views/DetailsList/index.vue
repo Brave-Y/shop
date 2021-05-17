@@ -23,15 +23,14 @@ export default {
   },
   created () {
     this.detailslist = DetailsList.data.details
-    console.log(this.detailslist)
   },
   methods: {
+    // 点击去商品详情
     gotoDetail (item) {
-      console.log(item)
       this.$router.push({
         path: '/details',
         query: {
-          goods_id: item.goods_id
+          details_id: item.details_id
         }
       })
     }

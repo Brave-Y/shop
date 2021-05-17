@@ -34,8 +34,8 @@ export default {
     }
   },
   methods: {
+    // 导航栏切换
     onChange (item) {
-      console.log(item)
       this.active = item
     }
   }
