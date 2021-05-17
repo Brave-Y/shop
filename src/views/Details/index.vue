@@ -112,7 +112,6 @@ export default {
     font-size: 20px;
     line-height: 16px;
     text-align: center;
-    background-color: #39a9ed;
   }
   .swipe img{
     display: inline-block;

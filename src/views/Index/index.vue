@@ -4,7 +4,7 @@
     <!-- 轮播图区域 -->
     <div class="swipe">
     <van-swipe class="my-swipe" :autoplay="2400" loop touchable  indicator-color="white">
-      <van-swipe-item v-for="(item, index) in swipers" :key="index">
+      <van-swipe-item v-for="(item, index) in swipers" :key="index" @click="goDetails()">
         <a>
           <!-- 超链接项目完成再添加 -->
            <!-- :href=item.navigator_url -->
@@ -35,12 +35,12 @@
         <div class="floor-img">
           <!-- 楼层左侧大盒子 -->
           <div class="floor-left">
-            <img :src=item.product_list[0].image_src :style="{width: item.product_list[0].image_width/2 + 'px'}">
+            <img :src=item.floor_left.image_src :style="{width: item.product_list[0].image_width/2 + 'px'}">
           </div>
           <!-- 楼层右侧小盒子 -->
           <div class="floor-img-right">
             <!-- 遍历 -->
-            <div v-for="(item2, index2) in item.product_list" :key="index2">
+            <div v-for="(item2, index2) in item.product_list" :key="index2" @click="goDetails()">
               <img :src=item2.image_src :style="{width: item2.image_width/2 + 'px'}">
             </div>
           </div>
@@ -75,6 +75,11 @@ export default {
     getFloors () {
       const { data: res } = Floors
       this.floors = res
+    },
+    goDetails () {
+      this.$router.push({
+        path: '/detailslist'
+      })
     }
   }
 }
@@ -87,20 +92,19 @@ export default {
     font-size: 20px;
     line-height: 16px;
     text-align: center;
-    background-color: #39a9ed;
   }
   .swipe img{
     display: inline-block;
     width: 100%;
-    height: 120px;
+    height: 150px;
 }
 .navigator{
   display: flex;
   justify-content: space-around;
-  margin-top: 12px;
+  margin: 16px 0;
   img {
     width: 93.75px;
-    height: 140px;
+    height: 100px;
   }
 }
 // 楼层区域
@@ -123,6 +127,10 @@ export default {
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+    img{
+      width: 110;
+      height: 110px;
+    }
 
 }
 </style>

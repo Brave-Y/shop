@@ -9,16 +9,58 @@ const DetailsList = {
   data: {
     details: [
       {
-        details_id: 57332,
-        details_name: '666400毫升 海鲜食品冷藏冰包 注水冰袋医用冰袋户外冷藏保鲜熟食冷藏反复使用（10个装）',
-        details_price: 14,
-        details_small_logo: 'https://emm.erm.icu/myvant/666.jpg'
+        details_id: 111,
+        details_name: 'Gree格力抽油烟机家用厨房大吸力侧吸自清洗吸油烟机保洁智能家电',
+        details_price: 2199,
+        details_small_logo: 'https://emm.erm.icu/1/1.png'
       },
       {
-        details_id: 57194,
-        details_name: '777洗车工具汽车美容用品海绵刷不伤车漆擦车海棉清洁海绵',
-        details_price: 29,
-        details_small_logo: 'https://emm.erm.icu/myvant/666.jpg'
+        details_id: 112,
+        details_name: 'Gree/格力 KFR-50LW 新能效变频冷暖大2匹空调柜机家用云之炫',
+        details_price: 5599,
+        details_small_logo: 'https://emm.erm.icu/1/2.webp'
+      },
+      {
+        details_id: 113,
+        details_name: 'Gree格力抽油烟机家用厨房大吸力侧吸自清洗能家电CXW-200-CCD02',
+        details_price: 2599,
+        details_small_logo: 'https://emm.erm.icu/1/3.webp'
+      },
+      {
+        details_id: 114,
+        details_name: '格力雅居大6匹一拖五GMV-H160WL家用中央空调全直流变频多联机',
+        details_price: 3199,
+        details_small_logo: 'https://emm.erm.icu/1/4.webp'
+      },
+      {
+        details_id: 115,
+        details_name: 'Gree/格力 KFR-50LW 新能效变频冷暖大2匹空调柜机家用云之炫',
+        details_price: 5599,
+        details_small_logo: 'https://emm.erm.icu/1/5.webp'
+      },
+      {
+        details_id: 116,
+        details_name: '官网家电格力官方自营店空调冷暖1P大1.5匹定频变频空调省电',
+        details_price: 1908,
+        details_small_logo: 'https://emm.erm.icu/1/2.webp'
+      },
+      {
+        details_id: 117,
+        details_name: '京东家电格力大1匹变频冷暖空调挂机家用壁挂式20平抖音同款',
+        details_price: 4089,
+        details_small_logo: 'https://emm.erm.icu/3/2.webp'
+      },
+      {
+        details_id: 118,
+        details_name: '小天鹅洗衣机全自动家用波轮小型8公斤大容量洗脱一体机TB80V23H',
+        details_price: 1199,
+        details_small_logo: 'https://emm.erm.icu/2/5.webp'
+      },
+      {
+        details_id: 119,
+        details_name: '美的油烟机燃气灶套餐JV703变频大吸力厨房侧吸元气套装智能家电',
+        details_price: 3999,
+        details_small_logo: 'https://emm.erm.icu/3/4.webp'
       }
     ]
   },
