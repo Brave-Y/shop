@@ -6,7 +6,7 @@ export default {
   state: () => ({
     // 收货地址
     address: {},
-    userInfo: {},
+    userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : { data: {}, token: {} },
     name: 1
   }),
 
@@ -17,8 +17,23 @@ export default {
       state.userInfo = data
       this.commit('User/saveUserinfo')
     },
+    // 登录
+    Login (state, data) {
+      state.userInfo.token = data
+      this.commit('User/saveUserinfo')
+    },
+    // 退出
+    logout (state) {
+      state.userInfo.token = {}
+      this.commit('User/saveUserinfo')
+    },
+    // 注销
+    out (state) {
+      state.userInfo = { data: {}, token: {} }
+      this.commit('User/saveUserinfo')
+    },
     saveUserinfo (state) {
-      localStorage.setItem('userinfo', JSON.stringify(state.userInfo))
+      localStorage.setItem('userInfo', JSON.stringify(state.userInfo))
     },
     // 更新收货地址
     updateAddress (state, address) {

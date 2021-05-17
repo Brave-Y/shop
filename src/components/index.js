@@ -6,6 +6,8 @@ import MyUserinfo from './my-userinfo'
 import MyLogin from './my-login'
 // 注册页面
 import MyRegister from './my-register'
+// naveBar
+import NaveBar from './nave-bar'
 export default {
   install (Vue) {
     // 插槽工具栏
@@ -13,5 +15,6 @@ export default {
     Vue.component('MyUserinfo', MyUserinfo)
     Vue.component('MyLogin', MyLogin)
     Vue.component('MyRegister', MyRegister)
+    Vue.component('NaveBar', NaveBar)
   }
 }

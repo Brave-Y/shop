@@ -4,7 +4,7 @@
     <div class="top-box">
       <!-- :src="userinfo.avatarUrl" -->
   <img src="@/assets/login.jpg">
-      <div class="nickname">输个名字真难</div>
+      <div class="nickname">{{userInfo.data.username ? userInfo.data.username : "输个名字真难"}}</div>
       <!-- {{userinfo.nickName ? userinfo.nickName : "输个名字真难"}} -->
     </div>
 
@@ -70,11 +70,11 @@
           <span>联系客服</span>
 <van-icon name="arrow" />
         </div>
-        <div class="panel-list-item" @click="logout">
+        <div class="panel-list-item" @click="Logout">
           <span>退出登录</span>
 <van-icon name="arrow" />
         </div>
-        <div class="panel-list-item" @click="logout">
+        <div class="panel-list-item" @click="Out">
           <span>注销账号</span>
 <van-icon name="arrow" />
         </div>
@@ -84,11 +84,37 @@
 </template>
 
 <script>
+import { Dialog } from 'vant'
+import { mapState, mapMutations } from 'vuex'
 export default {
-  methods: {
-    logout () {
-      console.log(66)
+  data () {
+    return {
     }
+  },
+  methods: {
+    ...mapMutations('User', ['logout', 'out']),
+    Logout () {
+      Dialog.confirm({
+        message: '您确认要退出吗'
+      }).then(() => {
+        this.logout({})
+      }).catch(() => {
+        // on cancel
+      })
+    },
+    Out () {
+      Dialog.confirm({
+        title: '注意',
+        message: '如果注销账号下次登录只能重新注册！！！'
+      }).then(() => {
+        this.out()
+      }).catch(() => {
+        // on cancel
+      })
+    }
+  },
+  computed: {
+    ...mapState('User', ['userInfo'])
   }
 
 }

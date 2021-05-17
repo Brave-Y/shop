@@ -53,6 +53,11 @@ const routes = [
         path: 'my',
         name: 'My',
         component: My
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Login
       }
     ]
   },
@@ -65,11 +70,6 @@ const routes = [
     path: '/detailslist',
     name: 'DetailsList',
     component: DetailsList
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
   },
   {
     path: '/register',

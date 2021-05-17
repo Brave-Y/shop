@@ -5,7 +5,7 @@
       <van-tabbar-item icon="home-o" to="/index">首页</van-tabbar-item>
       <van-tabbar-item icon="apps-o" dot to="/list">分类</van-tabbar-item>
       <van-tabbar-item icon="cart-o" :badge=badge to="/cart">购物车</van-tabbar-item>
-      <van-tabbar-item icon="contact" badge="20" to="/my">我的</van-tabbar-item>
+      <van-tabbar-item icon="contact" dot to="/my">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

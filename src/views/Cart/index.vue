@@ -1,7 +1,8 @@
 <template>
   <div>
 
-    <!-- 购物车商品列表的标题区域 -->
+<div v-if="detailslist.length !== 0">
+      <!-- 购物车商品列表的标题区域 -->
 <div class="cart-title">
   <!-- 左侧的图标 -->
   <van-icon name="shopping-cart-o" />
@@ -23,6 +24,13 @@
   <span>合计: <span>￥{{checkedTotal}}</span></span>
   <van-button class="button" type="danger">结算({{checkedCount}})</van-button>
 </div>
+</div>
+
+    <!-- 空白购物车区域 -->
+    <div class="empty-cart" v-else>
+      <img src="@/assets/cart.png" class="empty-img" />
+      <span class="tip-text">空空如也~</span>
+    </div>
 
   </div>
 </template>
@@ -128,4 +136,21 @@ export default {
     background-color: rgb(192,0,0);
   }
 }
+  .empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+
+    .empty-img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .tip-text {
+      font-size: 12px;
+      color: gray;
+      margin-top: 15px;
+    }
+  }
 </style>
