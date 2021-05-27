@@ -51,7 +51,7 @@ export default {
   data () {
     return {
       // 默认图片
-      defaultPic: 'https://emm.erm.icu/myvant/666.jpg',
+      defaultPic: require('@/assets/myvant/666.jpg'),
       // checked: this.detailslist.details_state,
       value: this.detailslist.details_count
     }
