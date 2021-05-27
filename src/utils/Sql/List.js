@@ -165,7 +165,7 @@ const List = {
     },
     {
       list_id: 2,
-      list_name: '进口',
+      list_name: '数码',
       list_icon: '',
       children: [
         {
@@ -313,7 +313,7 @@ const List = {
     },
     {
       list_id: 3,
-      list_name: '电器',
+      list_name: '进口',
       list_icon: '',
       children: [
         {
@@ -369,7 +369,7 @@ const List = {
     },
     {
       list_id: 4,
-      list_name: '鞋靴',
+      list_name: '企业',
       list_icon: '',
       children: [
         {
@@ -445,7 +445,7 @@ const List = {
     },
     {
       list_id: 2,
-      list_name: '进口',
+      list_name: '女装',
       list_icon: '',
       children: [
         {
@@ -593,7 +593,7 @@ const List = {
     },
     {
       list_id: 3,
-      list_name: '电器',
+      list_name: '男装',
       list_icon: '',
       children: [
         {
@@ -725,7 +725,7 @@ const List = {
     },
     {
       list_id: 8,
-      list_name: '数码',
+      list_name: '百货',
       list_icon: '',
       children: [
         {
@@ -848,7 +848,7 @@ const List = {
     },
     {
       list_id: 2,
-      list_name: '进口',
+      list_name: '电器',
       list_icon: '',
       children: [
         {
@@ -996,7 +996,7 @@ const List = {
     },
     {
       list_id: 3,
-      list_name: '电器',
+      list_name: '箱包',
       list_icon: '',
       children: [
         {
@@ -1052,7 +1052,7 @@ const List = {
     },
     {
       list_id: 2,
-      list_name: '进口',
+      list_name: '男装',
       list_icon: '',
       children: [
         {
@@ -1200,7 +1200,7 @@ const List = {
     },
     {
       list_id: 3,
-      list_name: '电器',
+      list_name: '洗护',
       list_icon: '',
       children: [
         {
@@ -1256,7 +1256,7 @@ const List = {
     },
     {
       list_id: 4,
-      list_name: '鞋靴',
+      list_name: '美妆',
       list_icon: '',
       children: [
         {
